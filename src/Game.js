@@ -9,7 +9,10 @@ function Game() {
     const columns = 7;
     const enough2Win = 4;
     const initialColor = 'white';
-    const [nextColor, setNextColor] = useState('red');
+    const color1 = 'red';
+    const color2 = 'blue';
+    //
+    const [nextColor, setNextColor] = useState(color1);
     const [colors, setColors] = useState(Array(rows*columns).fill(initialColor));
     const [winner, setWinner] = useState(null);
 
@@ -64,7 +67,7 @@ function Game() {
         if(!done) return;
 
         setColors(colors);
-        setNextColor(nextColor === 'red' ? 'blue' : 'red');
+        setNextColor(nextColor === color1 ? color2 : color1);
 
     }
 
